@@ -9,7 +9,7 @@ const Layout = () => {
         <Container>
           <HeaderNav>
             <HeaderNavLink to="/">Home</HeaderNavLink>
-            <HeaderNavLink to="/movies-search">Movies</HeaderNavLink>
+            <HeaderNavLink to="/movies">Movies</HeaderNavLink>
           </HeaderNav>
         </Container>
       </Header>
