@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 const Cast = ({ movieCast  }) => {
     const results = movieCast.map(item => {
