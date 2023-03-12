@@ -1,1 +1,1 @@
-export {default} from './CastList';
+export {default} from './Cast';

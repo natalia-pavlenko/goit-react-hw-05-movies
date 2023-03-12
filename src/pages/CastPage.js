@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'servises/axios-api';
-import Cast from 'components/Cast/CastList';
+import Cast from 'components/Cast/Cast';
 
 const CastPage = () => {
 const [movieCast, setMovieCast] = useState([]);
