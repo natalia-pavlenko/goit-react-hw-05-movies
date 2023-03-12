@@ -12,3 +12,5 @@ const MoviesList = ({data}) => {
   );
 };
 export default MoviesList;
+
+

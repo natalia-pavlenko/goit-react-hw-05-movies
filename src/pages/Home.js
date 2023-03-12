@@ -12,7 +12,7 @@ const Home = () => {
       setIsLoading(true);
       try {
         const moviesTrend = await getTrendingMovies();
-        if (moviesTrend.length === 0) {
+        if (!moviesTrend) {
           return <p>not found</p>;
         }
         setMovies(moviesTrend);
@@ -24,6 +24,7 @@ const Home = () => {
     };
     getTrending ();
   }, []);
+  
 return (
   <>
   <h1>Trending today</h1>
@@ -31,8 +32,6 @@ return (
   {movies &&  <MoviesList data={movies} /> }
   {error && <p> Oops...</p>}
   </>
-
-  
 )
 };
 export default Home;

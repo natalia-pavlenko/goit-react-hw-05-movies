@@ -22,7 +22,7 @@ const MovieDetailsPage = () => {
       try {
         const moviesDetails = await getMovieDetails(movieId);
         console.log(getDetails);
-        if (moviesDetails.length === 0) {
+        if (!moviesDetails) {
           return <p>not found</p>;
         }
         setMovies(movieId);

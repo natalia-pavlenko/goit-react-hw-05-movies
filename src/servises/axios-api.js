@@ -24,12 +24,12 @@ export const getMovieCredits = async (movieId) => {
   const {data } = await axios.get(
     `movie/${movieId}/credits?api_key=${API_KEY}`
   );
-  return data;
+  return data.cast;
 };
 
 export const getMovieReviews = async (movieId) => {
   const { data } = await axios.get(
     `movie/${movieId}/reviews?api_key=${API_KEY}`
   );
-  return data;
+  return data.results;
 };

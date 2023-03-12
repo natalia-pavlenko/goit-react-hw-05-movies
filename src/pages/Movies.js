@@ -26,7 +26,7 @@ const Movies = () => {
       try {
         const moviesSearch = await getSearchMovie(searchQuery);
         console.log(moviesSearch);
-        if (moviesSearch.length === 0) {
+        if (!moviesSearch) {
           return <p>not found</p>;
         }
         setMovies(moviesSearch);
