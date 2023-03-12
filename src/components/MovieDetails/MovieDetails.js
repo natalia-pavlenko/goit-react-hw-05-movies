@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 const MovieDetails = ({ data }) => {
   return (
     <>
+    console.log(data)
       {data && (
         <div>
           {data && data.title}

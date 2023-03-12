@@ -21,11 +21,11 @@ const MovieDetailsPage = () => {
       setIsLoading(true);
       try {
         const moviesDetails = await getMovieDetails(movieId);
-        console.log(getDetails);
+        console.log(moviesDetails);
         if (!moviesDetails) {
           return <p>not found</p>;
         }
-        setMovies(movieId);
+        setMovies(moviesDetails);
       } catch (error) {
         setError(error);
       } finally {
