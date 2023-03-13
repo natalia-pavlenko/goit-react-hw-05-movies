@@ -30,7 +30,11 @@ const ReviewsPage = () => {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      {movieReviews && <Reviews data={movieReviews} />}
+      {movieReviews.length < 0 ? (
+        <Reviews data={movieReviews} />
+      ) : (
+        <p>no reviews</p>
+      )}
       {error && <p> Oops...</p>}
     </>
   );

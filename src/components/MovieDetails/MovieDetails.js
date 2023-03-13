@@ -11,6 +11,9 @@ const MovieDetails = ({ data }) => {
             alt={data.title}
           />
           <p> {data.overview}</p>
+          {data.genres.map(item => {
+            return <p key={item.id}>{item.name}</p>;
+          })}
         </div>
       )}
       <Link to="cast">Cast</Link>

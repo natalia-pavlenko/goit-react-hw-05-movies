@@ -21,7 +21,7 @@ const MovieDetailsPage = () => {
       setIsLoading(true);
       try {
         const moviesDetails = await getMovieDetails(movieId);
-        console.log(moviesDetails);
+        // console.log(moviesDetails);
         if (!moviesDetails) {
           return <p>not found</p>;
         }
