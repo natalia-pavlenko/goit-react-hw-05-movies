@@ -1,7 +1,6 @@
-// import { useParams } from 'react-router-dom';
 
 const Cast = ({ data }) => {
-console.log(data);
+// console.log(data);
 
     const results = data.map(item => {
     const { id, profile_path, original_name, character } = item;
