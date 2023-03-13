@@ -13,7 +13,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const location = useLocation();
 
-  const backLinkHref = location.state?.from ?? '';
+  const backLinkHref = location?.state?.from ?? '/';
   const backlinkRef = useRef(backLinkHref);
 
   useEffect(() => {

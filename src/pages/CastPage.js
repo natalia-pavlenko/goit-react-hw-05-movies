@@ -4,37 +4,36 @@ import { getMovieCredits } from 'servises/axios-api';
 import Cast from 'components/Cast/Cast';
 
 const CastPage = () => {
-const [movieCast, setMovieCast] = useState([]);
-  
-const [isLoading, setIsLoading] = useState(false);
-const [error, setError] = useState('');
-const { movieId } = useParams();
+  const [movieCast, setMovieCast] = useState([]);
 
-useEffect(() => {
-  const getCredits = async () => {
-    setIsLoading(true);
-    try {
-      const getCredits = await getMovieCredits();
-      if (!getCredits) {
-        return <p>not found</p>;
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const { movieId } = useParams();
+
+  useEffect(() => {
+    const getCredits = async () => {
+      setIsLoading(true);
+      try {
+        const getCredits = await getMovieCredits(movieId);
+
+        console.log(getCredits);
+
+        setMovieCast(getCredits);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
       }
-      setMovieCast(getCredits);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  getCredits ();
-}, []);
-return (
-<>
-{isLoading && <p>Loading...</p>}
-{movieCast &&  <Cast data={movieId}/>}
-{error && <p> Oops...</p>}
-</>
-
-)
+    };
+    getCredits();
+  }, [movieId]);
+  return (
+    <>
+      {isLoading && <p>Loading...</p>}
+      {movieCast && <Cast data={movieCast} />}
+      {error && <p> Oops...</p>}
+    </>
+  );
 };
 
 export default CastPage;
