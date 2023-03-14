@@ -14,6 +14,7 @@ import {
 } from './MovieDetails.styled';
 
 const MovieDetails = ({ data }) => {
+  console.log(data);
   return (
     <>
       {data && (
@@ -26,7 +27,7 @@ const MovieDetails = ({ data }) => {
             />
           </PosterWrapper>
           <MovieTitle>
-            {data.original_title}
+            {data.original_title} ({data.release_date.split('').slice(0,4).join('') })
           </MovieTitle>
           {/* {data && data.title} */}
           <InfoTitles>Overview</InfoTitles>

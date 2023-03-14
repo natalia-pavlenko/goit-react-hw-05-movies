@@ -22,7 +22,7 @@ export const App = () => {
           <Route path="reviews" element={<ReviewsPage />} />
         </Route>
       </Route>
-      {/* <Route path = "*" element= {<NotFoutd/>}/> */}
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 };
