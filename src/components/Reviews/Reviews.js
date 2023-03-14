@@ -1,24 +1,17 @@
+import { ReviewsList} from './Reviews.styled';
+
 const Reiwers = ({ data }) => {
   console.log(data);
   return (
-    <ul>
+    <ReviewsList>
       {data.map(({ id, author, content }) => {
         return <li key={id}>
           <h4>{author}</h4>
           <p>{content}</p>
         </li>;
       })}
-    </ul>
+    </ReviewsList>
   );
-  // const results = data.map(({ id, author, content }) => {
-  //   return (
-  //     <li key={id}>
-  //       <h4>author: {author ? author : '...'}</h4>
-  //       <p>{content ? content : '...'}</p>
-  //     </li>
-  //   );
-  // });
 
-  //  return <ul>{results}</ul>;
 };
 export default Reiwers;

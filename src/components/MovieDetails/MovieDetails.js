@@ -1,25 +1,55 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import {
+  PosterWrapper,
+  MovieInfoDiv,
+  PosterImg,
+  MovieTitle,
+  InfoTitles,
+  InfoText,
+  AddWrapper,
+  AddInfo,
+  AddList,
+  AddListItem,
+  LinkItem,
+} from './MovieDetails.styled';
 
 const MovieDetails = ({ data }) => {
   return (
     <>
       {data && (
-        <div>
-          {data && data.title}
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path}`}
-            alt={data.title}
-          />
-          <p> {data.overview}</p>
+        <MovieInfoDiv>
+          <PosterWrapper>
+            <PosterImg
+              src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path}`}
+              alt={data.title}
+              width="250"
+            />
+          </PosterWrapper>
+          <MovieTitle>
+            {data.original_title}
+          </MovieTitle>
+          {/* {data && data.title} */}
+          <InfoTitles>Overview</InfoTitles>
+          <InfoText>{data.overview}</InfoText>
+          <InfoTitles>Genres</InfoTitles>
           {data.genres.map(item => {
             return <p key={item.id}>{item.name}</p>;
           })}
-        </div>
+        </MovieInfoDiv>
       )}
-      <Link to="cast">Cast</Link>
-      <Link to="reviews">Reviews</Link>
+      <AddWrapper>
+        <AddInfo>Additional information</AddInfo>
+        <AddList>
+          <AddListItem>
+            <LinkItem to="cast">Cast</LinkItem>
+          </AddListItem>
+          <AddListItem>
+            <LinkItem to="reviews">Reviews</LinkItem>
+          </AddListItem>
+        </AddList>
 
-      <Outlet />
+        <Outlet />
+      </AddWrapper>
     </>
   );
 };

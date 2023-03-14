@@ -1,4 +1,4 @@
-
+import { CastList } from './Cast.styled';
 const Cast = ({ data }) => {
 // console.log(data);
 
@@ -12,7 +12,7 @@ const Cast = ({ data }) => {
                     ? `https://image.tmdb.org/t/p/w500${profile_path}`
                     : `https://i.ibb.co/yQNvgQ7/1231313.jpg`
                 }
-                alt={original_name}
+                alt={original_name}  width="100" 
               />
               <p>
                 <b>{original_name ? original_name : '...'}</b>
@@ -21,6 +21,6 @@ const Cast = ({ data }) => {
             </li>
           );
         });
-        return <ul>{results}</ul>;
+        return <CastList>{results}</CastList>;
     }
 export default Cast;

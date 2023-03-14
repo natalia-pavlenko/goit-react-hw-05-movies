@@ -30,7 +30,7 @@ const ReviewsPage = () => {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      {movieReviews.length < 0 ? (
+      {movieReviews.length > 0 ? (
         <Reviews data={movieReviews} />
       ) : (
         <p>no reviews</p>

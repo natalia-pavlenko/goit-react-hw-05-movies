@@ -1,6 +1,9 @@
 import { getTrendingMovies } from 'servises/axios-api';
 import { useEffect, useState } from 'react';
 import MoviesList from 'components/MoviesList/MoviesList';
+import { TitleTrend, HomeDiv } from './Home.styled';
+
+
 
 const Home = () => {
   const [movies, setMovies] = useState(null);
@@ -26,12 +29,12 @@ const Home = () => {
   }, []);
   
 return (
-  <>
-  <h1>Trending today</h1>
+  <HomeDiv>
+  <TitleTrend>Trending today</TitleTrend>
   {isLoading && <p>Loading...</p>}
   {movies &&  <MoviesList data={movies} /> }
   {error && <p> Oops...</p>}
-  </>
+  </HomeDiv>
 )
 };
 export default Home;
