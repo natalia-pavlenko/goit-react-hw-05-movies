@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 
 import Layout from './Layout';
-// import styled from "styled-components";
+
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
