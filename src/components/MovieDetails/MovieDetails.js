@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Outlet } from 'react-router-dom';
 import {
   PosterWrapper,
@@ -48,8 +49,9 @@ const MovieDetails = ({ data }) => {
             <LinkItem to="reviews">Reviews</LinkItem>
           </AddListItem>
         </AddList>
-
+        <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
+        </Suspense>
       </AddWrapper>
     </>
   );
