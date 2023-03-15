@@ -1,14 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
-import { lazy } from 'react';
+// import { lazy } from 'react';
 
 import Layout from './Layout';
 
+import Home from '../pages/Home/Home';
+import Movies from '../pages/Movies';
+import MovieDetailsPage from '../pages/MovieDetails';
+import CastPage from '../pages/CastPage';
+import ReviewsPage from '../pages/ReviewsPage';
 
-const Home = lazy(() => import('../pages/Home/Home'));
-const Movies = lazy(() => import('../pages/Movies'));
-const MovieDetailsPage = lazy(() => import('../pages/MovieDetails'));
-const CastPage = lazy(() => import('../pages/CastPage'));
-const ReviewsPage = lazy(() => import ('../pages/ReviewsPage'))
+// const Home = lazy(() => import('../pages/Home/Home'));
+// const Movies = lazy(() => import('../pages/Movies'));
+// const MovieDetailsPage = lazy(() => import('../pages/MovieDetails'));
+// const CastPage = lazy(() => import('../pages/CastPage'));
+// const ReviewsPage = lazy(() => import ('../pages/ReviewsPage'))
 // import NotFoutd from "path/to/pages/NotFoutd";
 
 export const App = () => {
